@@ -2,10 +2,10 @@ from users import Users
 from bdd import Bdd
 
 
-def get_password(bdd: Bdd, user: Users):
-    data = bdd.read_one(user.name, "users", column_match="name")
-    # cursor.execute(f'select * from users where name like "{user.name}"')
-    user.mdp = data[2]
+# def get_password(bdd: Bdd, user: Users):
+#     data = bdd.read_one(user.name, "users", column_match="name")
+#     # cursor.execute(f'select * from users where name like "{user.name}"')
+#     user.mdp = data[2]
 
 
 def main():

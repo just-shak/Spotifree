@@ -6,5 +6,5 @@ class Users:
         self.name = username
         self.user_id = 0
         self.mdp = ""
-        self.friends = ()
-        self.playlist = ()
+        self.friends = []
+        self.playlist = []
