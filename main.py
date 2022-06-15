@@ -60,19 +60,27 @@ def connexion_user(bdd:Bdd):
     print("Bbye")
 
 def main():
-    # Initialisation de la connexion a mariadb
-   # spotifree_bdd = Bdd()
-#    connexion_user(spotifree_bdd)
+    #Initialisation de la connexion a mariadb
+    spotifree_bdd = Bdd()
+
+    tmp = spotifree_bdd.read_all(table_name="music", column_match="artist", text="Chinese Man")
+    
+    #connexion_user(spotifree_bdd)
     cnopts = pysftp.CnOpts()
     cnopts.hostkeys = None
 
-    sftp = pysftp.Connection('90.89.5.238', username='fef', cnopts=cnopts)
-    print("ça marche!")
-    #recup les tracks
-    sftp.get('/Gorillaz - D-Sides/01 - 68 State.mp3')
+    # Methode de connection au sftp de Félix
+    sftp = pysftp.Connection('90.89.5.238', username='fef', cnopts=cnopts)  
+    
+    # Print de test
+    print(f"tmp: {tmp}")
+
+    # On affiche le resultat du read contenu dans la variable tmp
+    print(f"tmp: /{tmp[0][2]}/{tmp[0][3]}/{tmp[0][1]}")
+
+    # Méthode pour récupérer le track avec le bon chemin d'accès au sftp
+    sftp.get(f"/{tmp[0][2]}/{tmp[0][3]}/{tmp[0][1]}.mp3")
     sftp.close()
-
-
 
 
 if __name__ == "__main__":
