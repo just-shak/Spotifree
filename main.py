@@ -1,5 +1,6 @@
 from users import Users
 from bdd import Bdd
+import pysftp
 
 
 # def get_password(bdd: Bdd, user: Users):
@@ -8,10 +9,7 @@ from bdd import Bdd
 #     user.mdp = data[2]
 
 
-def main():
-
-    # Initialisation de la connexion a mariadb
-    spotifree_bdd = Bdd()
+def connexion_user(bdd:Bdd):
 
     # # demande de connexion a l'utilisateur
     print("Bienvenue sur Spotifree!")
@@ -23,7 +21,7 @@ def main():
     #     print(field[0])
 
     # Verification de la présence de l'utilisateur
-    if spotifree_user.name in spotifree_bdd.read_one(
+    if spotifree_user.name in bdd.read_one(
         column_read="name",
         table_name="users",
         column_match="name",
@@ -31,13 +29,13 @@ def main():
     ):
         print("Entrer le mot de passe:")
         mdp = input()
-        spotifree_bdd.read_one(
+        bdd.read_one(
             column_read="mdp",
             table_name="users",
             column_match="name",
             text=spotifree_user.name,
         )
-        # get_password(spotifree_bdd, spotifree_user)
+        # get_password(bdd, spotifree_user)
         if mdp != spotifree_user.mdp:
             print("Mot de passe incorrect")
         else:
@@ -52,7 +50,7 @@ def main():
             print("Entrer le mot de passe:")
             spotifree_user.mdp = input()
 
-            spotifree_bdd.write(
+            bdd.write(
                 "users", ("name", "mdp"), (spotifree_user.name, spotifree_user.mdp)
             )
             print("Votre compte a bien été créé")
@@ -60,6 +58,21 @@ def main():
             print("A bientot sur spotifree !")
 
     print("Bbye")
+
+def main():
+    # Initialisation de la connexion a mariadb
+   # spotifree_bdd = Bdd()
+#    connexion_user(spotifree_bdd)
+    cnopts = pysftp.CnOpts()
+    cnopts.hostkeys = None
+
+    sftp = pysftp.Connection('90.89.5.238', username='fef', cnopts=cnopts)
+    print("ça marche!")
+    #recup les tracks
+    sftp.get('/Gorillaz - D-Sides/01 - 68 State.mp3')
+    sftp.close()
+
+
 
 
 if __name__ == "__main__":
