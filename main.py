@@ -28,7 +28,6 @@ def disconnect():
     return redirect("/")
 
 
-<<<<<<< HEAD
 @app.route("/register")
 def register():
     return render_template("register2.html")
@@ -44,8 +43,6 @@ def playlists():
     return render_template("playlists.html")
 
 
-=======
->>>>>>> social
 @app.route("/spotifriends")
 def spotifriends():
     return render_template("social_list.html")
