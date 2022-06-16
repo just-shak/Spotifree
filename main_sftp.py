@@ -82,7 +82,7 @@ def main():
     print(f"rep musique: /{tmp[0][2]}/{tmp[0][3]}/{tmp[0][1]}")
 
     # # Méthode pour récupérer le track avec le bon chemin d'accès au sftp
-    # sftp.get(f"/{tmp[0][2]}/{tmp[0][3]}/{tmp[0][1]}.mp3")
+    sftp.get(f"/{tmp[0][2]}/{tmp[0][3]}/{tmp[0][1]}.mp3")
     sftp.close()
 
 
