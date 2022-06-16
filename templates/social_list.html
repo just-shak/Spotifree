@@ -10,22 +10,26 @@
     <div class="d-flex flex-column align-items-center">
         <div class="w-50">
             <h1>My spotifriends!</h1>
+            <img src="images/image.png" alt="friends" class="img-thumbnail">
         </div>
         <div class="w-50"><label for="basic-url">Options</label></div>
         <form class="w-50" method="post" action="/login">
-            
+
             <div class="input-group mb-3">
-                <button type="submit" class="form-control" id="basic-url" aria-describedby="basic-addon3">Add friend</button>
+                <button type="submit" class="form-control" id="basic-url" aria-describedby="basic-addon3">Add
+                    friend</button>
             </div>
 
             <div class="input-group mb-3">
-                <button type="submit" class="form-control" id="basic-url" aria-describedby="basic-addon3">Remove friend</button>
+                <button type="submit" class="form-control" id="basic-url" aria-describedby="basic-addon3">Remove
+                    friend</button>
             </div>
 
             <div class="input-group mb-3">
-                <button type="submit" class="form-control" id="basic-url" aria-describedby="basic-addon3">Send messages</button>
+                <button type="submit" class="form-control" id="basic-url" aria-describedby="basic-addon3">Send
+                    messages</button>
             </div>
-            
+
         </form>
         <ul>
             {% for data in datas %}
