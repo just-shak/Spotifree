@@ -20,15 +20,105 @@
         <div class="w-75">
             <h2>On écoute quoi aujourd'hui?</h2>
             <p>Recherche:</p>
-            <form class="example" action="/action_page.php">
+            <form class="example" method="post" action="/music_search">
                 <div class="input-group mb-3">
-                    <input class="form-control" type="text" placeholder="Artistes, Albums, Titres..." name="search">
+                    <input class="form-control" type="text" name="music_keyword"
+                        placeholder="Artistes, Albums, Titres..." name="search">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-light" type="button">Button</button>
+                        <button class="btn btn-outline-light" type="submit">Go</button>
                     </div>
                     <!--button type="submit"><i class="fa fa-search">GO</i></button--->
                 </div>
             </form>
+            {%if results == True:%}
+            <p>Resultat de la Recherche: </p>
+            <p>{{msg}}</p>
+            <p>{{ results }}</p>
+            {%if tracks:%}
+            <div class="text-light">
+                <h1>Titres</h1>
+                <table id="titres">
+                    <tr>
+                        <th>Chanson</th>
+                        <th>Album</th>
+                        <th>Artiste</th>
+                    </tr>
+                    {% for track in tracks %}
+                    <tr>
+                        <td> {{track[1]}} </td>
+                        <td> {{track[3]}} </td>
+                        <td> {{track[2]}} </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            {%endif%}
+            {%if artists:%}
+            <div class="text-light">
+                <h1>Artistes</h1>
+                <table id="artistes">
+                    <tr>
+                        <th>Chanson</th>
+                        <th>Album</th>
+                        <th>Artiste</th>
+                    </tr>
+                    {% for artist in artists %}
+                    <tr>
+                        <td> {{artist[1]}} </td>
+                        <td> {{artist[3]}} </td>
+                        <td> {{artist[2]}} </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <!---div class="text-light">
+                        <p>Artistes:</p>
+                        <ul>
+                            {% for artist in artists %}
+                            <li>
+                                {{ artist }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div-->
+            {%endif%}
+            {%if albums:%}
+            <div class="text-light">
+                <h1>Albums</h1>
+                <table id="album">
+                    <tr>
+                        <th>Chanson</th>
+                        <th>Album</th>
+                        <th>Artiste</th>
+                    </tr>
+                    {% for album in albums %}
+                    <tr>
+                        <td> {{album[1]}} </td>
+                        <td> {{album[3]}} </td>
+                        <td> {{album[2]}} </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <!---div class="text-light">
+                <p>Albums:</p>
+                <ul>
+                    {% for album in albums %}
+                    <li>
+                        {{ album }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div--->
+            {%else:%}
+            <div class="text-light">
+                <p>results : {{ msg }}:</p>
+            </div>
+            {% endif %}
+            {%else:%}
+            <p>{{msg}}</p>
+            <p>{{ results }}</p>
+            {% endif %}
         </div>
     </div>
 </body>

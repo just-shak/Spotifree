@@ -53,7 +53,7 @@ class Bdd:
             data = []
         return data
 
-    def read_all(self, text, table_name, column_read="*", column_match=""):
+    def read_all(self, column_read="*", table_name="", column_match="", text=""):
         """read all elements found in bdd where a text is matched
         @param column_read: name of column to fetch results, default value = "*"
         @param table_name: bdd table which is needed

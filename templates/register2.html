@@ -14,26 +14,31 @@
         </div>
         <div class="container">
             <div class="w-50"><label for="basic-url">Créer un compte Spotifree</label></div>
-            <form class="w-50" method="post" action="/register">
+            <form class="w-50" method="post" action="/register_form">
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="email" name="email" class="form-control" id="email" placeholder="Enter email"/>
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Enter email" />
                 </div>
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" name="user" class="form-control" id="text" placeholder="Enter username"/>
+                    <input type="text" name="user" class="form-control" id="text" placeholder="Enter username" />
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password</label>
-                    <input type="password" name="password" class="form-control" id="pwd" placeholder="Enter password"/>
+                    <input type="password" name="password" class="form-control" id="pwd" placeholder="Enter password" />
                 </div>
                 <div class="form-group">
                     <label for="pwd2">Confirm password</label>
-                    <input type="password2" name="password2" class="form-control" id="text" placeholder="Repeat password"/>
+                    <input type="password" name="password2" class="form-control" id="text"
+                        placeholder="Repeat password" />
                 </div>
                 <div class="input-group mb-3">
-                    <button type="submit" class="form-control" id="basic-url" aria-describedby="basic-addon3">Submit</button>
+                    <button type="submit" class="form-control" id="basic-url"
+                        aria-describedby="basic-addon3">Submit</button>
                 </div>
+                {% if err == True : %}
+                <p class="text-danger">Le mot de passe est incorrect: Veuillez réessayer</p>
+                {% endif %}
             </form>
         </div>
     </div>
