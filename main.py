@@ -25,5 +25,10 @@ def disconnect():
     return redirect("/")
 
 
+@app.route("/playlists")
+def playliste():
+    return render_template("playlists.html")
+
+
 if __name__ == "__main__":
     app.run()
