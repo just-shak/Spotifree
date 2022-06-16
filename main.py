@@ -28,6 +28,7 @@ def disconnect():
     return redirect("/")
 
 
+<<<<<<< HEAD
 @app.route("/register")
 def register():
     return render_template("register.html")
@@ -36,6 +37,11 @@ def register():
 @app.route("/music_search")
 def music_search():
     return render_template("search.html")
+=======
+@app.route("/playlists")
+def playliste():
+    return render_template("playlists.html")
+>>>>>>> felix_template
 
 
 if __name__ == "__main__":
