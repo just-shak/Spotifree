@@ -27,7 +27,7 @@ def disconnect():
 
 @app.route("/register")
 def register():
-    return render_template("register.html")
+    return render_template("register2.html")
 
 
 if __name__ == "__main__":
