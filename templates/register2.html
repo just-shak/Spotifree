@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8' />
+    <title>Register | Create a Spotifree account</title>
+    <link rel='stylesheet' href='bootstrap.css'>
+</head>
+
+<body class='bg-success text-light'>
+    <div class="d-flex flex-column align-items-center">
+        <div class="w-50">
+            <h1>Bienvenue sur Spotifree !</h1>
+        </div>
+        <div class="container">
+            <div class="w-50"><label for="basic-url">Créer un compte Spotifree</label></div>
+            <form class="w-50" method="post" action="/register">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Enter email"/>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="user" class="form-control" id="text" placeholder="Enter username"/>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password</label>
+                    <input type="password" name="password" class="form-control" id="pwd" placeholder="Enter password"/>
+                </div>
+                <div class="form-group">
+                    <label for="pwd2">Confirm password</label>
+                    <input type="password2" name="password2" class="form-control" id="text" placeholder="Repeat password"/>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

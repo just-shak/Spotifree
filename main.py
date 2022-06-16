@@ -30,7 +30,7 @@ def disconnect():
 
 @app.route("/register")
 def register():
-    return render_template("register.html")
+    return render_template("register2.html")
 
 
 @app.route("/music_search")
