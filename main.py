@@ -25,5 +25,10 @@ def disconnect():
     return redirect("/")
 
 
+@app.route("/spotifriends")
+def spotifriends():
+    return render_template("social_list.html")
+
+
 if __name__ == "__main__":
     app.run()
