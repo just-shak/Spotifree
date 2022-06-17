@@ -52,6 +52,22 @@ Proftpd
 SSH
 
 
+INSTALLATION :
+
+(Installer les modules python correspondant si besoin: flup, flask, uwsgi)
+Dans le dossier site_spotifree de dossier github Spotifree:
+1. Dezipper l'archive spotifree.tar.gz au chemin /var/www/.
+2. Copier le fichier de configuration spotifree_config au chemin
+   /etc/nginx/site_available puis créer son lien symbolique sur
+   /etc/nginx/site_enabled
+3. dans le fichier global de nginx.conf changer le user http par son propre
+   utilisateur (qui devra lancer le script et qui aura les droits)
+4. Lancer le socket fastcgi puis nginx
+
+Dans le dossier github Spotifree:
+5. Lancer le script acceuil.fcgi (./acceuil.fcgi nimporte ou)
+(sinon, refaire un lien pour le fichier acceuil.fcgi dans /var/www/Spotifree/cgi-bin/)
+
 
 
 

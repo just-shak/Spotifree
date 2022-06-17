@@ -123,6 +123,7 @@ def music_search():
         return render_template(
             "search.html", msg="get", results=False, request=request.method
         )
+    # methodes pour tester le retour d'information sur la page TODO: a supprimer
     if request.method == "POST" and request.form["music_keyword"] == "":
         return render_template(
             "search.html", msg="post", results=False, request=request.method
