@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8' />
+    <title>Welcome</title>
+    <link rel='stylesheet' href='bootstrap.css'>
+</head>
+
+<body class='bg-success text-light'>
+    <div class="d-flex flex-column align-items-center">
+        <div class="w-50">
+            <h1>Bienvenue sur Spotifree !</h1>
+        </div>
+
+        <div class="w-75">
+            <h2>On fait quoi aujourd'hui?</h2>
+        </div>
+
+            <form class="w-50" method="post" action="/choice">
+                <div class="input-group mb-3">
+                    <button type="submit" name="music" value="music" class="form-control" id="basic-url" aria-describedby="basic-addon3">Chercher une musique</button>
+                </div>
+
+                <div class="input-group mb-3">
+                    <button type="submit" name="playlist" value="playlist" class="form-control" id="basic-url" aria-describedby="basic-addon3">Voir mes playlists</button>
+                </div>
+
+                <div class="input-group mb-3">
+                    <button type="submit" name="spotifriends" value="spotifriends" class="form-control" id="basic-url" aria-describedby="basic-addon3">Spotifriends</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
