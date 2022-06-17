@@ -2,7 +2,6 @@
 
 ## Il s'agit d'un projet de fin de formation proposant un equivalent de Spotify.
 
-
 Consignes:
 
 - Un utilisateur spotifree a une application spotifree.
@@ -32,12 +31,28 @@ Voir ses playlists:
     - il peut écouter les musiques d'une playslist;
   ==> à ce stade du projet, cette partie n'a pas encore été devéloppée. Seule la page html existe
 
-
 Spotifriends:
     - le user voit la liste de ses amis (qui sont aussi des users de spotifree);
     - il peut ajouter ou supprimer des amis;
     - il peut envoyer des messages à ses amis et partager ses playlists.
    ==> à ce stade du projet, cette partie n'a pas encore été devéloppée. Seule la page html existe
+
+
+## Technos utilisé
+
+Flask Framework web pour le templating des pages.
+Python pour la partie scripting
+
+module utilisé
+pysftp pour établir la connection avec le sftp
+
+Hébergement des fichier
+sFTP
+Proftpd
+SSH
+
+
+
 
 
 Membres du projet: Justine Bigotte, Thuy Tran DARRITCHON, Felix MARLIO, Monica SASSI, Marine TOURNOIS, Justin UONG
