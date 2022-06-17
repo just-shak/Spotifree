@@ -22,13 +22,22 @@ De son espace personnel, l'utilisateur aura 3 choix:
   - Spotifriends
 
 Chercher de la musique:
-    Il pourra réaliser des recherches de musique par Artiste, Album et Titre.
-    Il pourra ainsi réaliser des téléchargements et les rajouter à des playlists (partie non encore dévéloppée)
-    ==> pour l'instant, on ne peut que faire des recherches et les résultats trouvés s'affichent. Les données sont bien incrémentées dans la BDD
-L’application permet de rajouter, supprimer et d’envoyer des messages aux amis de l’utilisateur. Cette partie n’est pas encore fonctionnelle
+    - Il pourra réaliser des recherches de musique par Artiste, Album et Titre.
+    - Il pourra ainsi réaliser des téléchargements et les rajouter à des playlists (partie non encore dévéloppée)
+   ==> pour l'instant, on ne peut que faire des recherches et les résultats trouvés s'affichent. Les données sont bien incrémentées dans la BDD
 
-Elle se connecte aux serveurs spotifree pour valider les identifiants.
+Voir ses playlists:
+    - le user peut voir la liste de ses playlists;
+    - il peut ajouter ou supprimer des playlists;
+    - il peut écouter les musiques d'une playslist;
+  ==> à ce stade du projet, cette partie n'a pas encore été devéloppée. Seule la page html existe
 
+
+Spotifriends:
+    - le user voit la liste de ses amis (qui sont aussi des users de spotifree);
+    - il peut ajouter ou supprimer des amis;
+    - il peut envoyer des messages à ses amis et partager ses playlists.
+   ==> à ce stade du projet, cette partie n'a pas encore été devéloppée. Seule la page html existe
 
 
 Membres du projet: Justine Bigotte, Thuy Tran DARRITCHON, Felix MARLIO, Monica SASSI, Marine TOURNOIS, Justin UONG
