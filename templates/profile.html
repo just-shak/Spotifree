@@ -13,28 +13,23 @@
             <h1>Bienvenue sur Spotifree !</h1>
         </div>
 
-        <div class="w-50">
-            <h2 class="title">
-                Welcome {{ name }} !</h2>
-        </div>    
-
-        <div class="w-50">
+        <div class="w-75">
             <h2>On fait quoi aujourd'hui?</h2>
         </div>
 
             <form class="w-50" method="post" action="/choice">
                 <div class="input-group mb-3">
-                    <button type="submit" class="form-control" id="basic-url" aria-describedby="basic-addon3">Chercher une musique</button>
+                    <button type="submit" name="music" value="music" class="form-control" id="basic-url" aria-describedby="basic-addon3">Chercher une musique</button>
                 </div>
 
                 <div class="input-group mb-3">
-                    <button type="submit" class="form-control" id="basic-url" aria-describedby="basic-addon3">Voir mes playlists</button>
+                    <button type="submit" name="playlist" value="playlist" class="form-control" id="basic-url" aria-describedby="basic-addon3">Voir mes playlists</button>
                 </div>
 
                 <div class="input-group mb-3">
-                    <button type="submit" class="form-control" id="basic-url" aria-describedby="basic-addon3">Spotifriends</button>
+                    <button type="submit" name="spotifriends" value="spotifriends" class="form-control" id="basic-url" aria-describedby="basic-addon3">Spotifriends</button>
                 </div>
-                
+
             </form>
         </div>
     </div>
