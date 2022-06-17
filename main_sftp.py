@@ -1,4 +1,5 @@
-from users import Users
+# Import des BDD, et du module de connexion SFTP pour Python : 
+from users import Users 
 from bdd import Bdd
 import pysftp
 
@@ -8,10 +9,9 @@ import pysftp
 #     # cursor.execute(f'select * from users where name like "{user.name}"')
 #     user.mdp = data[2]
 
-
 def connexion_user(bdd: Bdd):
 
-    # # demande de connexion a l'utilisateur
+    # Demande de connexion a l'utilisateur
     print("Bienvenue sur Spotifree!")
     print("Veuillez entrer un identifiant:")
     spotifree_user = Users(input())
@@ -20,7 +20,7 @@ def connexion_user(bdd: Bdd):
     # for field in bdd_cursor.fetchall():
     #     print(field[0])
 
-    # Verification de la présence de l'utilisateur
+    # Verification de la présence de l'utilisateur avec mdp :
     if spotifree_user.name in bdd.read_one(
         column_read="name",
         table_name="users",
@@ -41,7 +41,7 @@ def connexion_user(bdd: Bdd):
         else:
             print("Vous êtes connecté")
 
-    # si l'utilisateur n'existe pas encore
+    # Si l'utilisateur n'existe pas encore, création du compte avec mdp associé :
     else:
         print("Identifiant inconnu")
         user_input = input("Voulez-vous créer un compte ? [o/n]")
@@ -64,13 +64,13 @@ def main():
     # Initialisation de la connexion a mariadb
     spotifree_bdd = Bdd()
 
-    tmp = spotifree_bdd.read_all(
+    tmp = spotifree_bdd.read_all( # On stocke dans une variable temporaire la requête de l'utilisateur
         table_name="music", column_match="artist", text="Chinese Man"
     )
 
     # connexion_user(spotifree_bdd)
     cnopts = pysftp.CnOpts()
-    cnopts.hostkeys = None
+    cnopts.hostkeys = None  # Permet de ne pas vérifier la clée de l'hôte lors de la connexion
 
     print("Methode de connection au sftp de Félix")
     sftp = pysftp.Connection("90.89.5.238", username="fef", port=2121, cnopts=cnopts)
@@ -79,12 +79,12 @@ def main():
     # print(f"tmp: {tmp}")
 
     # # On affiche le resultat du read contenu dans la variable tmp
-    print(f"rep musique: /{tmp[0][2]}/{tmp[0][3]}/{tmp[0][1]}")
+    print(f"rep musique: /{tmp[0][2]}/{tmp[0][3]}/{tmp[0][1]}") # On crée une chaine de charactères représentant le chemin vers la musique voulue : {tmp[0][2]} => récupération du nom de l'artiste, {tmp[0][3]} => résupération de l'album,{tmp[0][1]} => récupération de la chanson
 
     # # Méthode pour récupérer le track avec le bon chemin d'accès au sftp
     sftp.get(f"/{tmp[0][2]}/{tmp[0][3]}/{tmp[0][1]}.mp3")
     sftp.close()
-
+    # Si il y avait plusieurs chansons qui correspondaient à la requête utilisateur (ex : recherche d'un album), tmp[0][x] serait la première chanson, tmp[1][x] la deuxième, etc...
 
 if __name__ == "__main__":
     main()
